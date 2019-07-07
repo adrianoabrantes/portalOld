@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Pagina Inicial</title>
+	<script>
+	function limpar() {
+		var mensagem = document.getElementById('form:mensagem');
+		mensagem.display=none;
+	}
+	</script>
+</h:head>
+<h:body>
+	<div style="align-self: center;">
+		<div
+			style="width: 100%; background-color: olive; height: 60px; padding: 5px; margin-bottom: 5px">
+			<h1>Pagina Inicial</h1>
+		</div>
+		<div
+			style="border: 1px solid; width: 400px; height: 150px; padding: 5px">
+			<h:form id="form">
+				<table>
+					<tr>
+						<th colspan="2">Tela de Login</th>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="Usuario" /></td>
+						<td><h:inputText id="campoUsuario"
+								value="#{loginBean.usuario}" onclick="limpar()" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="Senha" /></td>
+						<td><h:inputSecret id="campoSenha" value="#{loginBean.senha}" />
+						</td>
+					</tr>
+					<tr>
+						<td><h:commandButton value="Enviar"
+								action="#{loginBean.logar}" /></td>
+						<td><h:commandButton value="Limpar" /></td>
+					</tr>
+					<tr>
+						<th colspan="2"><h:outputText id="mensagem"
+								value="#{loginBean.mensagem}" /></th>
+					</tr>
+				</table>
+			</h:form>
+		</div>
+	</div>
+</h:body>
+
+</html>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Pagina Inicial</title>
+	<script>
+		function exibirMsg() {
+			var campoNome = document.getElementById('form1:campoNome');
+			alert(campoNome.value.toUpperCase());
+
+		}
+		function limparCampos(idCampo) {
+			var campo = document.getElementById(idCampo);
+			campo.value = ' ';
+		}
+	</script>
+</h:head>
+<h:body>
+	<h1>Pagina Inicial</h1>
+	<div style="display: inline-flex;">
+
+		<div
+			style="width: 200px; padding: 10px; margin-right: 5px; background-color: gray;">
+			<h2>Painel 1</h2>
+
+			<h:form id="form1">
+				<h:outputLabel value="Nome" />
+				<br />
+				<h:inputText id="campoNome" value="#{pessoaBean1.nome}" />
+				<br />
+				<h:outputLabel value="Sobrenome" />
+				<br />
+				<h:inputText id="campoSobrenome" value="#{pessoaBean1.sobrenome}" />
+				<br />
+				<h:outputLabel value="Idade" />
+				<br />
+				<h:inputText id="campoIdade" value="#{pessoaBean1.idade}" />
+				<br />
+				<br />
+				<h:outputLabel value="Nome: " />
+				<h:outputText value="#{pessoaBean1.pessoa}" />
+				<br />
+				<h:outputLabel value="Idade: " />
+				<h:outputText value="#{pessoaBean1.idade}" />
+				<br />
+				<h:commandButton value="Enviar" action="#{pessoaBean1.criarPessoa}" />
+			</h:form>
+		</div>
+		<div
+			style="width: 200px; padding: 10px; margin-right: 5px; background-color: green; color: white;">
+			<h2>Painel 2</h2>
+
+			<h:form id="form2">
+				<h:outputLabel value="Nome" />
+				<br />
+				<h:inputText id="campoNome" value="#{pessoaBean2.nome}" />
+				<br />
+				<h:outputLabel value="Sobrenome" />
+				<br />
+				<h:inputText id="campoSobrenome" value="#{pessoaBean2.sobrenome}" />
+				<br />
+				<h:outputLabel value="Idade" />
+				<br />
+				<h:inputText id="campoIdade" value="#{pessoaBean2.idade}" />
+				<br />
+				<br />
+				<h:outputLabel value="Nome: " />
+				<h:outputText value="#{pessoaBean2.pessoa}" />
+				<br />
+				<h:outputLabel value="Idade: " />
+				<h:outputText value="#{pessoaBean2.idade}" />
+				<br />
+				<h:commandButton binding="#{pessoaBean2.commandButton}"
+					value="Enviar" action="#{pessoaBean2.addPessoa}" />
+				<br />
+				<br />
+				<h:outputText value="#{pessoaBean2.pessoas}" />
+			</h:form>
+		</div>
+		<div
+			style="width: 200px; padding: 10px; margin-right: 5px; background-color: blue; color: white;">
+			<h2>Painel 3</h2>
+
+			<h:form id="form3">
+				<h:outputLabel value="Nome" />
+				<br />
+				<h:inputText id="campoNome" value="#{pessoaBean3.nome}"
+					onclick="this.value=' '" />
+				<br />
+				<h:outputLabel value="Sobrenome" />
+				<br />
+				<h:inputText id="campoSobrenome" value="#{pessoaBean3.sobrenome}" />
+				<br />
+				<h:outputLabel value="Idade" />
+				<br />
+				<h:inputText id="campoIdade" value="#{pessoaBean3.idade}" />
+				<br />
+				<br />
+				<h:outputLabel value="Nome: " />
+				<h:outputText value="#{pessoaBean3.pessoa}" />
+				<br />
+				<h:outputLabel value="Idade: " />
+				<h:outputText value="#{pessoaBean3.idade}" />
+				<br />
+				<h:commandButton value="Enviar" action="#{pessoaBean3.criarPessoa}" />
+			</h:form>
+		</div>
+		<div
+			style="width: 200px; padding: 10px; margin-right: 5px; background-color: maroon;; color: white;">
+			<h2>Painel 4</h2>
+
+			<h:form id="form4">
+				<h:outputLabel value="Nome" />
+				<br />
+				<h:inputText id="campoNome" value="#{pessoaBean4.nome}" />
+				<br />
+				<h:outputLabel value="Sobrenome" />
+				<br />
+				<h:inputText id="campoSobrenome" value="#{pessoaBean4.sobrenome}" />
+				<br />
+				<h:outputLabel value="Idade" />
+				<br />
+				<h:inputText id="campoIdade" value="#{pessoaBean4.idade}" />
+				<br />
+				<br />
+				<h:outputLabel value="Nome: " />
+				<h:outputText value="#{pessoaBean4.pessoa}" />
+				<br />
+				<h:outputLabel value="Idade: " />
+				<h:outputText value="#{pessoaBean4.idade}" />
+				<br />
+				<h:commandButton value="Enviar" action="#{pessoaBean4.criarPessoa}" />
+			</h:form>
+		</div>
+	</div>
+</h:body>
+
+</html>
