@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Cadastro de Usuarios</title>
+</h:head>
+<h:form>
+	<table>
+		<tr>
+			<th colspan="2">Cadastro de Usuarios</th>
+		</tr>
+		<tr>
+			<td><h:outputLabel value="ID" /></td>
+			<td><h:inputText value="#{usuarioBean.usuario.id}" /></td>
+		</tr>
+		<tr>
+			<td><h:outputLabel value="Usuario" /></td>
+			<td><h:inputText value="#{usuarioBean.usuario.usuario}" /></td>
+		</tr>
+		<tr>
+			<td><h:outputLabel value="Senha" /></td>
+			<td><h:inputSecret value="#{usuarioBean.usuario.senha}" /></td>
+		</tr>
+		<tr>
+			<td><h:outputLabel value="Confirmar Senha" /></td>
+			<td><h:inputSecret value="#{usuarioBean.usuario.confirmarSenha}" /></td>
+		</tr>
+		<tr>
+			<th colspan="2"><h:outputText
+					value="#{usuarioBean.usuario.mensagem}" /></th>
+		</tr>
+		<tr>
+			<th colspan="2"><h:commandButton value="Novo"
+					action="#{usuarioBean.novo}" /> <h:commandButton value="Salvar"
+					action="#{usuarioBean.salvar}" /> <h:commandButton value="Excluir"
+					action="#{usuarioBean.remove}" /></th>
+		</tr>
+	</table>
+
+	<h:dataTable value="#{usuarioBean.usuarios}" var="usuario">
+		<h:column>
+			<h:outputText value="#{usuario.id}" />
+		</h:column>
+		<h:column>
+			<h:outputText value="#{usuario.usuario}" />
+		</h:column>
+		<h:column>
+			<h:commandLink value="Editar">
+				<f:setPropertyActionListener value="#{usuario}"
+					target="#{usuarioBean.usuario}" />
+			</h:commandLink>
+		</h:column>
+		<h:column>
+			<h:commandLink value="Excluir" action="#{usuarioBean.remove}">
+				<f:setPropertyActionListener value="#{usuario}"
+					target="#{usuarioBean.usuario}"/>
+			</h:commandLink>
+		</h:column>
+	</h:dataTable>
+</h:form>
+</html>

@@ -7,7 +7,8 @@
 	<script>
 		function exibirMsg() {
 			var campoNome = document.getElementById('form1:campoNome');
-			alert(campoNome.value.toUpperCase());
+			var campoSobrenome = document.getElementById('form1:campoSobrenome');
+			alert(campoNome.value.toUpperCase()+ " "+campoSobrenome.value.toUpperCase());
 
 		}
 		function limparCampos(idCampo) {
@@ -44,7 +45,7 @@
 				<h:outputLabel value="Idade: " />
 				<h:outputText value="#{pessoaBean1.idade}" />
 				<br />
-				<h:commandButton value="Enviar" action="#{pessoaBean1.criarPessoa}" />
+				<h:commandButton value="Enviar" action="#{pessoaBean1.criarPessoa}" onclick="exibirMsg();"/>
 			</h:form>
 		</div>
 		<div
